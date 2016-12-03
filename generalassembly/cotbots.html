@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>COTBOTS</title>
+    <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
     <style>
       .robot {
         position: relative;
@@ -37,6 +38,19 @@
         border-right: 75px solid transparent;
         border-radius: 20px 20px 100px 100px;
       }
+      .left {
+        font-family: 'Poller One', verdana, arial, sans-serif;
+        font-weight: bold;
+        font-size: 250px;
+        color: #666;
+        transform: rotate(200deg);
+        -webkit-transform: rotate(200deg);
+        -moz-transform: rotate(200deg);
+        position: relative;
+        left: -190px;
+        top: -320px;
+        z-index: -1;
+      }
       .foot {
         height: 40px;
         width: 40px;
@@ -54,7 +68,10 @@
     <div class="robot">
       <div class="beep"></div>
       <div class="brain"></div>
-      <div class="torso"></div>
+      <div class="torso">
+        <div class="left">j</div>
+        <div class="right">j</div>
+      </div>
       <div class="foot"></div>
     </div>
   </body>
