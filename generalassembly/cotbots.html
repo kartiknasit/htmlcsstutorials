@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>COTBOTS</title>
+    <script src="script/jquery_1.10.2.min.js" charset="utf-8"></script>
     <link href="https://fonts.googleapis.com/css?family=Poller+One" rel="stylesheet">
     <style>
       .robot {
@@ -33,10 +34,12 @@
           background: -moz-radial-gradient(circle, red 15%, transparent 40%), #cc5;
         }
       }
-      .brain {
+      .laser {
         animation: blink .5s infinite;
         -webkit-animation: blink .5s infinite;
         -moz-animation: blink .5s infinite;
+      }
+      .brain {
         background: radial-gradient(circle, white 15%, transparent 40%), #cc5;
         background: -moz-radial-gradient(circle, white 15%, transparent 40%), #cc5;
         background: -webkit-radial-gradient(circle, white 15%, transparent 40%), #cc5;
@@ -105,5 +108,12 @@
       </div>
       <div class="foot"></div>
     </div>
+    <button  class="flash">laser eyes on/off</button>
+    <script>
+      // When button with flash class clicked laser class is added/removed from brain class
+      $('.flash').click(function(){
+        $('.brain').toggleClass('laser');
+      });
+    </script>
   </body>
 </html>
