@@ -109,10 +109,22 @@
       <div class="foot"></div>
     </div>
     <button  class="flash">laser eyes on/off</button>
+    <button  class="color">change color</button>
     <script>
       // When button with flash class clicked laser class is added/removed from brain class
       $('.flash').click(function(){
         $('.brain').toggleClass('laser');
+      });
+
+      // When color button is clicked...
+      $(".color").click(function() {
+        // assign each named color a random number 0-255
+        var red = Math.floor(Math.random() * 255);
+        var green = Math.floor(Math.random() * 255);
+        var blue = Math.floor(Math.random() * 255);
+
+        //Display the three values in an alert window
+        alert(red + "," + green + "," + blue);
       });
     </script>
   </body>
