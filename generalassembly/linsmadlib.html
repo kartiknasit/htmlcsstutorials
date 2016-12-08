@@ -11,22 +11,33 @@
     <script type="text/javascript">
       var prompts = ['Type your name', 'Type an adjective', 'Type a noun'];
 
+      var answers = [];
+
       // keep track of current counter
       var currentPrompt = 0;
 
       // A function that will call the next prompt
       var nextPrompt = function() {
+
+        // if there's no answers in the form
+        if(currentPrompt != 0) {
+          answers.push($('input').val());
+        }
         // if prompt available
         if(currentPrompt < prompts.length) {
           // put first prompt in all html elements with class prompt
-          $('.prompt').html(prompts[currentPrompt]);
+          $('.prompt').html(prompts[currentPrompt] + '<br><input type="text">');
 
           // move the next prompt into variable currentPrompt
           currentPrompt = currentPrompt + 1;
         }
         else {
-          $('.prompt').html("that's all for now");
+          showFinal();
         }
+      }
+      //puts user answers into HTML
+      var showFinal = function() {
+        $('.prompt').html('Name: ' + answers[0]+' Adjective: '+answers[1]+' Noun: '+answers[2]);
       }
       // run nextPromp function when button is clicked
       $('button').click(function(){
